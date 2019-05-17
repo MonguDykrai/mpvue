@@ -1,5 +1,6 @@
 <template>
-  <div @click="clickHandle">
+  <div>
+    <!-- <div @click="clickHandle"> -->
     <!-- <div class="userinfo" @click="bindViewTap">
       <img
         class="userinfo-avatar"
@@ -31,15 +32,17 @@
     <div class="all">
       <div class="left"></div>
       <div class="right"></div>
-    </div> -->
+    </div>-->
+
+    <h1>Todo List</h1>
 
     <ul class="list">
       <li v-for="(todo, index) in todos" :key="index">
         <input type="checkbox">
-        <span>{{ todo.userId }}</span>
-        <span>{{ todo.id }}</span>
-        <span>{{ todo.title }}</span>
-        <span>{{ todo.completed }}</span>
+        <!-- <span>{{ todo.userId }}</span> -->
+        <!-- <span>{{ todo.id }}</span> -->
+        <p class="ellipsis">{{ todo.title }}</p>
+        <!-- <span>{{ todo.completed }}</span> -->
       </li>
     </ul>
   </div>
@@ -94,6 +97,7 @@ export default {
         mpvue.navigateTo({ url });
       }
     },
+
     clickHandle(ev) {
       console.log("clickHandle:", ev);
       // throw {message: 'custom test'}
@@ -173,8 +177,26 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+h1 {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
 .list {
-  background-color: red;
+  // background-color: red;
+
+  > li {
+    display: flex;
+    padding: 10px 12px;
+  }
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
 }
 </style>
-
