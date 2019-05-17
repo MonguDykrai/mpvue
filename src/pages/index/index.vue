@@ -193,6 +193,7 @@ h1 {
 }
 
 .ellipsis {
+  // https://css-tricks.com/almanac/properties/t/text-overflow/
   text-overflow: ellipsis;
 
   /* Required for text-overflow to do anything */

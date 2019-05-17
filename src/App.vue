@@ -10,20 +10,25 @@ export default {
      * 支付宝(蚂蚁)：mpvue === my, mpvuePlatform === 'my'
      */
 
-    let logs;
-    if (mpvuePlatform === "my") {
-      logs = mpvue.getStorageSync({ key: "logs" }).data || [];
-      logs.unshift(Date.now());
-      mpvue.setStorageSync({
-        key: "logs",
-        data: logs
-      });
-    } else {
-      logs = mpvue.getStorageSync("logs") || [];
-      logs.unshift(Date.now());
-      mpvue.setStorageSync("logs", logs);
-    }
+    // let logs;
+    // if (mpvuePlatform === "my") {
+    //   logs = mpvue.getStorageSync({ key: "logs" }).data || [];
+    //   logs.unshift(Date.now());
+    //   mpvue.setStorageSync({
+    //     key: "logs",
+    //     data: logs
+    //   });
+    // } else {
+    //   logs = mpvue.getStorageSync("logs") || [];
+    //   logs.unshift(Date.now());
+    //   mpvue.setStorageSync("logs", logs);
+    // }
+
+    let logs = mpvue.getStorageSync("logs") || [];
+    logs.unshift(Date.now());
+    mpvue.setStorageSync("logs", logs);
   },
+  
   log() {
     console.log(`log at:${Date.now()}`);
   }
@@ -43,8 +48,8 @@ export default {
 /* this rule will be remove */
 * {
   transition: width 2s;
-  -moz-transition: width 2s;
-  -webkit-transition: width 2s;
-  -o-transition: width 2s;
+  /* -moz-transition: width 2s; */
+  /* -webkit-transition: width 2s; */
+  /* -o-transition: width 2s; */
 }
 </style>
