@@ -37,7 +37,7 @@
 
 <script>
 import card from "@/components/card";
-// import Fly from "flyio";
+
 console.log("%cwx: ", "color: red;");
 console.log(wx);
 
@@ -86,6 +86,15 @@ export default {
 
   created() {
     // let app = getApp()
+
+    // this.$http
+    //   .get("https://api.douban.com/v2/movie/top250?start=25&count=25")
+    //   .then(res => {
+    //     console.log(res);
+    //   })
+    //   .catch(err => {
+    //     console.error(err);
+    //   });
   }
 };
 </script>
