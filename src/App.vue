@@ -23,6 +23,9 @@ export default {
       logs.unshift(Date.now())
       mpvue.setStorageSync('logs', logs)
     }
+
+    console.log(global.mpvue.request)
+
   },
   log () {
     console.log(`log at:${Date.now()}`)
