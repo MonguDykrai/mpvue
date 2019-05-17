@@ -1,6 +1,6 @@
 <template>
   <div @click="clickHandle">
-    <div class="userinfo" @click="bindViewTap">
+    <!-- <div class="userinfo" @click="bindViewTap">
       <img
         class="userinfo-avatar"
         v-if="userInfo.avatarUrl"
@@ -31,15 +31,25 @@
     <div class="all">
       <div class="left"></div>
       <div class="right"></div>
-    </div>
+    </div> -->
+
+    <ul class="list">
+      <li v-for="(todo, index) in todos" :key="index">
+        <input type="checkbox">
+        <span>{{ todo.userId }}</span>
+        <span>{{ todo.id }}</span>
+        <span>{{ todo.title }}</span>
+        <span>{{ todo.completed }}</span>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 import card from "@/components/card";
 
-console.log("%cwx: ", "color: red;");
-console.log(wx);
+// console.log("%cwx: ", "color: red;");
+// console.log(wx);
 
 // console.log({
 //   global,
@@ -55,7 +65,8 @@ export default {
       userInfo: {
         nickName: "mpvue",
         avatarUrl: "http://mpvue.com/assets/logo.png"
-      }
+      },
+      todos: []
     };
   },
 
@@ -65,6 +76,11 @@ export default {
 
   methods: {
     bindViewTap() {
+      // wx.showLoading({
+      //   title: "确定是否要离开本页",
+      //   false: true
+      // });
+
       // mpvue.showToast({
       //   title: "hello world"
       // });
@@ -86,7 +102,6 @@ export default {
 
   created() {
     // let app = getApp()
-
     // this.$http
     //   .get("https://api.douban.com/v2/movie/top250?start=25&count=25")
     //   .then(res => {
@@ -95,6 +110,11 @@ export default {
     //   .catch(err => {
     //     console.error(err);
     //   });
+
+    this.todos = require("./data.json");
+    // this.todos.forEach(todo => {
+    //   console.log(todo);
+    // });
   }
 };
 </script>
@@ -151,3 +171,10 @@ export default {
   background-color: green;
 }
 </style>
+
+<style lang="scss" scoped>
+.list {
+  background-color: red;
+}
+</style>
+
