@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <div @click="clickHandle"> -->
-    <!-- <div class="userinfo" @click="bindViewTap">
+    <div class="userinfo" @click="bindViewTap">
       <img
         class="userinfo-avatar"
         v-if="userInfo.avatarUrl"
@@ -32,13 +32,13 @@
     <div class="all">
       <div class="left"></div>
       <div class="right"></div>
-    </div>-->
+    </div>
 
     <h1>Todo List</h1>
 
     <ul class="list">
       <li v-for="(todo, index) in todos" :key="index">
-        <input type="checkbox">
+        <input type="checkbox" v-model="todo.completed">
         <!-- <span>{{ todo.userId }}</span> -->
         <!-- <span>{{ todo.id }}</span> -->
         <p class="ellipsis">{{ todo.title }}</p>
@@ -69,7 +69,8 @@ export default {
         nickName: "mpvue",
         avatarUrl: "http://mpvue.com/assets/logo.png"
       },
-      todos: []
+      todos: [],
+      checked: false,
     };
   },
 

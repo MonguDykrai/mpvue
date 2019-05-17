@@ -1,12 +1,12 @@
 <template>
   <div>
-      <swiper v-if="imgUrls.length > 0" indidator-dots="imgUrls.length > 1" >
+    <swiper v-if="imgUrls.length > 0" indidator-dots="imgUrls.length > 1" >
       <block v-for="(item, index) in imgUrls" :key="index" >
         <swiper-item>
-          <image :src="item" mode="scaleToFill"></image>
+          <image :src="item" mode="scaleToFill" style="width: 100%;"></image>
         </swiper-item>
       </block>
-    </swiper>
+     </swiper>
 
     <ul class="container log-list">
       <li v-for="(log, index) in logs" :class="{ red: aa }" :key="index" class="log-item">
