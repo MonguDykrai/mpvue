@@ -37,16 +37,21 @@
 
 <script>
 import card from "@/components/card";
-// import Fly from "flyio";
-console.log("%cwx: ", "color: red;");
-console.log(wx);
+import Fly from "flyio";
+const request = new Fly();
+console.log(request);
 
-// console.log({
-//   global,
-//   mpvue,
-//   mpvuePlatform,
-//   getApp
-// });
+console.log({
+  global
+  // mpvue,
+  // mpvuePlatform
+});
+
+// console.log(global.getApp());
+
+// console.log(console);
+
+// console.table([{ a: 2 }]);
 
 export default {
   data() {
